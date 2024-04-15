@@ -20,6 +20,7 @@
   border-radius: 20px;
   border: 1px solid green;
   overflow: hidden; 
+  width: 80%;
 }
 .p-menuitem-link:hover {
   background-color: #C4D9FA !important;

@@ -22,7 +22,8 @@ import { LfiComponent } from './lfi/lfi.component';
 import { NmapComponent } from './nmap/nmap.component';
 import { TableModule  } from 'primeng/table';
 import { ListboxModule } from 'primeng/listbox';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { MegaMenuModule } from 'primeng/megamenu';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { HomeComponent } from './home/home.component'
     BrowserAnimationsModule,
     NoopAnimationsModule,
     TableModule ,
-    ListboxModule
+    ListboxModule,
+    MegaMenuModule
   ],
   providers: [PrimeIcons ],
   bootstrap: [AppComponent]

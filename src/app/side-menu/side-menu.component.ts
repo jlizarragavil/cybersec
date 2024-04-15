@@ -6,28 +6,103 @@ import { MegaMenuItem, MenuItem } from 'primeng/api';
   
 })
 export class SideMenuComponent {
-  breadcrumbItems: MenuItem[] = [];
 
-  tieredItems: MenuItem[] = [];
+  breadcrumbItems: MegaMenuItem[] = [];
 
-  items: MenuItem[] = [];
+  tieredItems: MegaMenuItem[] = [];
+  gfg: MegaMenuItem[] = [];
+  items: MegaMenuItem[] = [];
 
-  routeItems: MenuItem[] = [];
+  routeItems: MegaMenuItem[] = [];
 
   megaMenuItems: MegaMenuItem [] = [];
 
-  panelMenuItems: MenuItem[] = [];
+  panelMenuItems: MegaMenuItem[] = [];
 
-  stepsItems: MenuItem[] = [];
+  stepsItems: MegaMenuItem[] = [];
 
-  slideItems: MenuItem[] = [];
+  slideItems: MegaMenuItem[] = [];
 
-  menuItems: MenuItem [] = [];
+  menuItems: MegaMenuItem [] = [];
 
-  plainMenuItems: MenuItem[] = [];
+  plainMenuItems: MegaMenuItem[] = [];
   ngOnInit() {
 
-    this.tieredItems = [
+    this.gfg = [ 
+      { 
+        label: 'DSA - Self Paced', 
+        items: [ 
+          [ 
+            { 
+              label: 'Batch 1', 
+              items: [{ label: 'Batch 1.1' },  
+              { label: 'Batch 1.2' }], 
+            }, 
+            { 
+              label: 'Batch 2', 
+              items: [{ label: 'Batch 2.1' },  
+              { label: 'Batch 2.2' }], 
+            }, 
+          ], 
+          [ 
+            { 
+              label: 'Batch 3', 
+              items: [{ label: 'Batch 3.1' },  
+              { label: 'Batch 3.2' }], 
+            }, 
+            { 
+              label: 'Batch 4', 
+              items: [{ label: 'Batch 4.1' },  
+              { label: 'Batch 4.2' }], 
+            }, 
+          ], 
+        ], 
+      }, 
+  
+      { 
+        label: 'COmplete Interview Preparation', 
+        items: [ 
+          [ 
+            { 
+              label: 'Batch 1', 
+              items: [{ label: 'User 1.1' },  
+              { label: 'User 1.2' }], 
+            }, 
+            { 
+              label: 'Batch 2', 
+              items: [{ label: 'Batch 2.1' },  
+              { label: 'Batch 2.2' }], 
+            }, 
+          ], 
+          [ 
+            { 
+              label: 'Batch 3', 
+              items: [{ label: 'Batch 3.1' },  
+              { label: 'Batch 3.2' }], 
+            }, 
+            { 
+              label: 'Batch 4', 
+              items: [{ label: 'Batch 4.1' },  
+              { label: 'Batch 4.2' }], 
+            }, 
+          ], 
+          [ 
+            { 
+              label: 'Batch 5', 
+              items: [{ label: 'Batch 5.1' },  
+              { label: 'Batch 5.2' }], 
+            }, 
+            { 
+              label: 'Batch 6', 
+              items: [{ label: 'Batch 6.1' },  
+              { label: 'Batch 6.2' }], 
+            }, 
+          ], 
+        ], 
+      }, 
+    ]; 
+
+    /*this.tieredItems = [
       {
         label: 'Home',
         icon: 'pi pi-home',
@@ -106,6 +181,6 @@ export class SideMenuComponent {
           }
         ]
       }
-    ]; 
+    ]; */
   } 
 }

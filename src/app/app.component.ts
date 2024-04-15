@@ -20,9 +20,6 @@ export class AppComponent {
     }
     this.checkScroll();
   }
-  toggleMenu() {
-    this.isHeaderVisible = !this.isHeaderVisible; // Cambia la visibilidad del menú
-  }
 
   checkScroll() {
     let scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
