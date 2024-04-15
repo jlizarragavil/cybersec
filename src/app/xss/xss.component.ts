@@ -101,7 +101,7 @@ export class XssComponent implements AfterViewInit, OnInit  {
   constructor(private titleService: Title, private router: Router, private location: Location) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0); // Scrolls to the top of the page
+        window.scrollTo(0, 0);
       }
     });
   }
@@ -112,7 +112,7 @@ export class XssComponent implements AfterViewInit, OnInit  {
   }
 
   ngAfterViewInit(): void {
-    Prism.highlightAll(); // Resalta la sintaxis del código
+    Prism.highlightAll();
   }
   generateURL(label: string): string {
     const basePath = this.location.prepareExternalUrl('');
@@ -127,7 +127,7 @@ export class XssComponent implements AfterViewInit, OnInit  {
       range.selectNode(codeContainer);
       window.getSelection()?.removeAllRanges();
       window.getSelection()?.addRange(range);
-      document.execCommand('copy'); // Copia el texto seleccionado al portapapeles
+      document.execCommand('copy'); 
       window.getSelection()?.removeAllRanges();
     }
   }

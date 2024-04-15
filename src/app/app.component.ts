@@ -20,13 +20,16 @@ export class AppComponent {
     }
     this.checkScroll();
   }
+  toggleMenu() {
+    this.isHeaderVisible = !this.isHeaderVisible; // Cambia la visibilidad del menú
+  }
 
   checkScroll() {
     let scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const scrollButton = document.querySelector('.scroll-top-button');
     const scrollButton2 = document.querySelector('.scroll-top-button') as HTMLElement;
     if (scrollButton) {
-      if (scrollPosition > 300) { // Cambia este valor según tu preferencia
+      if (scrollPosition > 300) {
         scrollButton.classList.add('show');
         scrollButton2.style.opacity = '1';
       } else {
@@ -38,7 +41,7 @@ export class AppComponent {
   scrollToTop() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // Desplazamiento suave hacia arriba
+      behavior: 'smooth'
     });
   }
 }

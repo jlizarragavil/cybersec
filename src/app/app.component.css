@@ -9,18 +9,18 @@
 }
 
 .layout-sidebar {
-    flex: 0 0 250px; /* Ancho fijo de la barra lateral */
-    background-color: #E1ECFF; /* Color de fondo de la barra lateral */
+    flex: 0 0 250px;
+    background-color: #E1ECFF; 
     
 }
 
 .layout-content {
-    flex: 1; /* El contenido principal toma todo el espacio restante */
+    flex: 1; 
     padding: 20px;
 }
-/* En tu archivo CSS */
+
 .rounded-sidebar {
-    border-radius: 10px; /* Ajusta el valor según tus preferencias */
+    border-radius: 10px;
   }
   .layout-sidebar {
     background-color: #E1ECFF;
@@ -33,4 +33,48 @@
 :host ::ng-deep .p-panel .p-panel-header { 
     background: #ACB1BA !important; 
     color: white;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #C1C3C7;
+    padding-bottom: 1%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: top 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 1;
+  }
+  .visible {
+  top: 0;
+  }
+
+  .hidden {
+    top: -100px;
+    opacity: 0;
+  }
+  .scroll-top-button {
+    position: fixed;
+    margin-right: 0.4%;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2d73e2;
+    color: #ffffff;
+    border: black 1px solid !important;
+    border-radius: 25%;
+    width: 65px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+ 
+  }
+  .menu-toggle-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
 }
