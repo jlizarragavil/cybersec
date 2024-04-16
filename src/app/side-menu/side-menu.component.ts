@@ -1,186 +1,290 @@
-import { Component,ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { MegaMenuItem, MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
-  
+
 })
 export class SideMenuComponent {
 
-  breadcrumbItems: MegaMenuItem[] = [];
+  breadcrumbItems: MenuItem[] = [];
 
-  tieredItems: MegaMenuItem[] = [];
-  gfg: MegaMenuItem[] = [];
-  items: MegaMenuItem[] = [];
+  tieredItems: MenuItem[] = [];
+  gfg: MenuItem[] = [];
+  items: MenuItem[] = [];
 
-  routeItems: MegaMenuItem[] = [];
+  routeItems: MenuItem[] = [];
 
-  megaMenuItems: MegaMenuItem [] = [];
+  megaMenuItems: MenuItem[] = [];
 
-  panelMenuItems: MegaMenuItem[] = [];
+  panelMenuItems: MenuItem[] = [];
 
-  stepsItems: MegaMenuItem[] = [];
+  stepsItems: MenuItem[] = [];
 
-  slideItems: MegaMenuItem[] = [];
+  slideItems: MenuItem[] = [];
 
-  menuItems: MegaMenuItem [] = [];
+  menuItems: MenuItem[] = [];
 
-  plainMenuItems: MegaMenuItem[] = [];
+  plainMenuItems: MenuItem[] = [];
   ngOnInit() {
 
-    this.gfg = [ 
-      { 
-        label: 'DSA - Self Paced', 
-        items: [ 
-          [ 
-            { 
-              label: 'Batch 1', 
-              items: [{ label: 'Batch 1.1' },  
-              { label: 'Batch 1.2' }], 
-            }, 
-            { 
-              label: 'Batch 2', 
-              items: [{ label: 'Batch 2.1' },  
-              { label: 'Batch 2.2' }], 
-            }, 
-          ], 
-          [ 
-            { 
-              label: 'Batch 3', 
-              items: [{ label: 'Batch 3.1' },  
-              { label: 'Batch 3.2' }], 
-            }, 
-            { 
-              label: 'Batch 4', 
-              items: [{ label: 'Batch 4.1' },  
-              { label: 'Batch 4.2' }], 
-            }, 
-          ], 
-        ], 
-      }, 
-  
-      { 
-        label: 'COmplete Interview Preparation', 
-        items: [ 
-          [ 
-            { 
-              label: 'Batch 1', 
-              items: [{ label: 'User 1.1' },  
-              { label: 'User 1.2' }], 
-            }, 
-            { 
-              label: 'Batch 2', 
-              items: [{ label: 'Batch 2.1' },  
-              { label: 'Batch 2.2' }], 
-            }, 
-          ], 
-          [ 
-            { 
-              label: 'Batch 3', 
-              items: [{ label: 'Batch 3.1' },  
-              { label: 'Batch 3.2' }], 
-            }, 
-            { 
-              label: 'Batch 4', 
-              items: [{ label: 'Batch 4.1' },  
-              { label: 'Batch 4.2' }], 
-            }, 
-          ], 
-          [ 
-            { 
-              label: 'Batch 5', 
-              items: [{ label: 'Batch 5.1' },  
-              { label: 'Batch 5.2' }], 
-            }, 
-            { 
-              label: 'Batch 6', 
-              items: [{ label: 'Batch 6.1' },  
-              { label: 'Batch 6.2' }], 
-            }, 
-          ], 
-        ], 
-      }, 
-    ]; 
+    this.gfg = [
+      {
+        label: 'DSA - Self Paced',
+        items: [
+          
+            {
+              label: 'Batch 1',
+              items: [{ label: 'Batch 1.1' },
+              { label: 'Batch 1.2' }],
+            },
+            {
+              label: 'Batch 2',
+              items: [{ label: 'Batch 2.1' },
+              { label: 'Batch 2.2' }],
+            },
+          
+          
+            {
+              label: 'Batch 3',
+              items: [{ label: 'Batch 3.1' },
+              { label: 'Batch 3.2' }],
+            },
+            {
+              label: 'Batch 4',
+              items: [{ label: 'Batch 4.1' },
+              { label: 'Batch 4.2' }],
+            },
+        ]
+        
+      },
 
-    /*this.tieredItems = [
+      {
+        label: 'COmplete Interview Preparation',
+        items: [
+          
+            {
+              label: 'Batch 1',
+              items: [{ label: 'User 1.1' },
+              { label: 'User 1.2' }],
+            },
+            {
+              label: 'Batch 2',
+              items: [{ label: 'Batch 2.1' },
+              { label: 'Batch 2.2' }],
+            },
+          
+          
+            {
+              label: 'Batch 3',
+              items: [{ label: 'Batch 3.1' },
+              { label: 'Batch 3.2' }],
+            },
+            {
+              label: 'Batch 4',
+              items: [{ label: 'Batch 4.1' },
+              { label: 'Batch 4.2' }],
+            },
+          
+          
+            {
+              label: 'Batch 5',
+              items: [{ label: 'Batch 5.1' },
+              { label: 'Batch 5.2' }],
+            },
+            {
+              label: 'Batch 6',
+              items: [{ label: 'Batch 6.1' },
+              { label: 'Batch 6.2' }],
+            },
+          ],
+        
+      }
+      
+    ];
+
+    this.tieredItems = [
       {
         label: 'Home',
         icon: 'pi pi-home',
-        routerLink: '/home'
+        routerLink: '/home',
+        
       },
       {
         label: 'Conceptos',
         icon: 'pi pi-book',
         //routerLink: '/hackingWeb',
-        items: [
-            {
-                label: 'SQL Injection',
-                icon: 'pi pi-database',
-                routerLink: '/sql-injection'
-            },
-            {
-              label: 'XSS',
-              icon: 'pi pi-code',
-              routerLink:'/xss'
-          }
+        items: [{
+          label: 'SQL Injection',
+          icon: 'pi pi-database',
+          routerLink: '/sql-injection'
+        },
+        {
+          label: 'XSS',
+          icon: 'pi pi-code',
+          routerLink: '/xss'
+        }
+
         ]
       },
       {
         label: 'Escaneo y reconocimiento',
         icon: 'pi pi-search',
         //routerLink: '/hackingWeb',
-        items: [
-          {
-            label: 'Escaneo',
-            icon: 'pi pi-map',
-            routerLink: '/nmap',
-          },
-          {
-            label: 'Reconocmiento',
-            icon: 'pi pi-id-card',
-            routerLink:'/xss'
-          }
+        items: [{
+          label: 'Escaneo',
+          icon: 'pi pi-map',
+          routerLink: '/nmap',
+        },
+        {
+          label: 'Reconocmiento',
+          icon: 'pi pi-id-card',
+          routerLink: '/xss'
+        }
+
         ]
       },
       {
         label: 'Hacking Web',
         icon: 'pi pi-globe',
         //routerLink: '/hackingWeb',
-        items: [
-          {
-              label: 'SQL Injection',
-              icon: 'pi pi-database',
-              routerLink: '/sql-injection'
-          },
-          {
-            label: 'XSS',
-            icon: 'pi pi-code',
-            routerLink:'/xss'
-          },
-          {
-            label: 'Local File Inclusion',
-            icon: 'pi pi-file',
-            routerLink:'/lfi'
-          }
+        items: [{
+          label: 'SQL Injection',
+          icon: 'pi pi-database',
+          routerLink: '/sql-injection'
+        },
+        {
+          label: 'XSS',
+          icon: 'pi pi-code',
+          routerLink: '/xss'
+        },
+        {
+          label: 'Local File Inclusion',
+          icon: 'pi pi-file',
+          routerLink: '/lfi'
+        }
+
         ]
       },
       {
         label: 'Ataques a contraseñas',
         icon: 'pi pi-shield',
         //routerLink: '/hackingWeb',
-        items: [
-            {
-                label: 'Online',
-                icon: 'pi pi-user',
-                routerLink: '/onlinePasswordAttack'
-            },
-            {
-              label: 'Offline',
-              icon: 'pi pi-times',
-              routerLink:'/offlinePasswordAttack'
-          }
+        items: [{
+          label: 'Online',
+          icon: 'pi pi-user',
+          routerLink: '/onlinePasswordAttack'
+        },
+        {
+          label: 'Offline',
+          icon: 'pi pi-times',
+          routerLink: '/offlinePasswordAttack'
+        }
+
+        ]
+      },
+      {
+        label: 'Ataques a contraseñas',
+        icon: 'pi pi-shield',
+        //routerLink: '/hackingWeb',
+        items: [{
+          label: 'Online',
+          icon: 'pi pi-user',
+          routerLink: '/onlinePasswordAttack'
+        },
+        {
+          label: 'Offline',
+          icon: 'pi pi-times',
+          routerLink: '/offlinePasswordAttack'
+        }
+
+        ]
+      },
+      {
+        label: 'Ataques a contraseñas',
+        icon: 'pi pi-shield',
+        //routerLink: '/hackingWeb',
+        items: [{
+          label: 'Online',
+          icon: 'pi pi-user',
+          routerLink: '/onlinePasswordAttack'
+        },
+        {
+          label: 'Offline',
+          icon: 'pi pi-times',
+          routerLink: '/offlinePasswordAttack'
+        }
+
+        ]
+      },
+      {
+        label: 'Ataques a contraseñas',
+        icon: 'pi pi-shield',
+        //routerLink: '/hackingWeb',
+        items: [{
+          label: 'Online',
+          icon: 'pi pi-user',
+          routerLink: '/onlinePasswordAttack'
+        },
+        {
+          label: 'Offline',
+          icon: 'pi pi-times',
+          routerLink: '/offlinePasswordAttack'
+        }
+
+        ]
+      },
+      {
+        label: 'Ataques a contraseñas',
+        icon: 'pi pi-shield',
+        //routerLink: '/hackingWeb',
+        items: [{
+          label: 'Online',
+          icon: 'pi pi-user',
+          routerLink: '/onlinePasswordAttack'
+        },
+        {
+          label: 'Offline',
+          icon: 'pi pi-times',
+          routerLink: '/offlinePasswordAttack'
+        }
+
+        ]
+      },
+      {
+        label: 'Ataques a contraseñas',
+        icon: 'pi pi-shield',
+        //routerLink: '/hackingWeb',
+        items: [{
+          label: 'Online',
+          icon: 'pi pi-user',
+          routerLink: '/onlinePasswordAttack'
+        },
+        {
+          label: 'Offline',
+          icon: 'pi pi-times',
+          routerLink: '/offlinePasswordAttack'
+        }
+
+        ]
+      },
+      {
+        label: 'Ataques a contraseñas',
+        icon: 'pi pi-shield',
+        //routerLink: '/hackingWeb',
+        items: [{
+          label: 'Online',
+          icon: 'pi pi-user',
+          routerLink: '/onlinePasswordAttack'
+        },
+        {
+          label: 'Offline',
+          icon: 'pi pi-times',
+          routerLink: '/offlinePasswordAttack'
+        }
+
         ]
       }
-    ]; */
-  } 
+    ];
+  }
 }

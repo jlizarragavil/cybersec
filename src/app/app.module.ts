@@ -24,6 +24,8 @@ import { TableModule  } from 'primeng/table';
 import { ListboxModule } from 'primeng/listbox';
 import { HomeComponent } from './home/home.component';
 import { MegaMenuModule } from 'primeng/megamenu';
+import { MenuModule } from 'primeng/menu';
+import { PanelMenuModule } from 'primeng/panelmenu';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { MegaMenuModule } from 'primeng/megamenu';
     NoopAnimationsModule,
     TableModule ,
     ListboxModule,
-    MegaMenuModule
+    MegaMenuModule,
+    MenuModule,
+    PanelMenuModule
   ],
   providers: [PrimeIcons ],
   bootstrap: [AppComponent]

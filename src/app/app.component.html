@@ -5,24 +5,25 @@
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
-<style>
-
-</style>
-<header [ngClass]="{'visible': isHeaderVisible, 'hidden': !isHeaderVisible}">
-  
+<header>
   
 </header>
 <body style="background-color: #8AB4F9;">
-  
-  <div class="layout-container">
-    <!-- Contenido principal -->
-    <app-side-menu></app-side-menu>
-    <div class="layout-content" style="margin-top: 5%;">
-        <router-outlet></router-outlet>
-        <button pButton type="button" icon="pi pi-arrow-up" class="scroll-top-button" (click)="scrollToTop()"></button>
-          <!--<p-button class="scroll-top-button p-button-rounded" (click)="scrollToTop()" icon="pi pi-arrow-up" iconPos="center"></p-button>-->
+    <div class="layout-container">
+        <div class="side-menu-container">
+            <div class="side-menu-scroll">
+                <app-side-menu></app-side-menu>
+            </div>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="main-content">
+            <div class="main-content-scroll">
+                <router-outlet></router-outlet>
+            </div>
+            <button pButton type="button" icon="pi pi-arrow-up" class="scroll-top-button" (click)="scrollToTop()"></button>
+        </div>
     </div>
-  </div>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
