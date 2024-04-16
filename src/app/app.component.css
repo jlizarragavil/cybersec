@@ -14,22 +14,15 @@ header {
   height: 90vh; /* Ajusta la altura al 90% de la pantalla */
 }
 
-.side-menu-container {
-  flex: 0 0 20%;
-  overflow-y: auto;
-  height: 100%; /* Ocupa el 100% del espacio restante */
-}
-
-.main-content {
+.side-menu-container, .main-content {
   flex: 1;
   overflow-y: auto;
   padding: 20px;
   height: 100%; /* Ocupa el 100% del espacio restante */
 }
 
-/* Ajusta el tamaño de la app-side-menu para evitar desbordamiento */
-app-side-menu {
-  max-height: 90%;
+.side-menu-container {
+  flex: 0 0 20%;
   overflow-y: auto;
 }
 
@@ -39,42 +32,29 @@ app-side-menu {
 }
 
 :host ::ng-deep .p-panelmenu .p-panelmenu-header > a,
-::ng-deep .p-panelmenu .p-panelmenu-content {
+:host ::ng-deep .p-panelmenu .p-panelmenu-content {
   background: #3d434d !important;
   border-color: #3d434d !important;
 }
-
-
 
 :host ::ng-deep .p-panel .p-panel-content { 
   background: #3d434d !important; 
   border-color: rgb(150, 145, 163) !important;
 } 
 
-::ng-deep .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled)>a:hover {
+:host ::ng-deep .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled)>a:hover,
+:host ::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight>a,
+:host ::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a:hover {
   background-color: rgb(77, 48, 156) !important;
   border-color: rgb(77, 48, 156) !important;
 }
 
-::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight>a {
-  background-color: rgb(77, 48, 156) !important;
-}
-
-
-::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a:hover {
-  background-color: rgb(77, 48, 156) !important;
-}
-
-:host ::ng-deep .p-panel .p-panel-header{ 
+:host ::ng-deep .p-panel .p-panel-header { 
   background: #667388 !important; 
 } 
 
-:host ::ng-deep .p-menuitem-text{
-  color: white !important;
-}
-:host ::ng-deep .p-menuitem-icon{
-  color: white !important;
-}
+:host ::ng-deep .p-menuitem-text,
+:host ::ng-deep .p-menuitem-icon,
 :host ::ng-deep .p-panelmenu .p-component.p-panelmenu-header>a {
   color: white !important;
 }
