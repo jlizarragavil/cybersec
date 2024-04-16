@@ -31,22 +31,25 @@ header {
   height: 100%; /* Ajusta la altura al 100% de la pantalla */
 }
 
-:host ::ng-deep .p-panelmenu .p-panelmenu-header > a,
-:host ::ng-deep .p-panelmenu .p-panelmenu-content {
-  background: #3d434d !important;
-  border-color: #3d434d !important;
-}
+
 
 :host ::ng-deep .p-panel .p-panel-content { 
   background: #3d434d !important; 
   border-color: rgb(150, 145, 163) !important;
 } 
 
+:host ::ng-deep .p-panelmenu .p-panelmenu-header > a,
+:host ::ng-deep .p-panelmenu .p-panelmenu-content {
+  background: #3d434d !important;
+  border-color: #3d434d !important;
+}
+
 :host ::ng-deep .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled)>a:hover,
 :host ::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight>a,
 :host ::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a:hover {
   background-color: rgb(77, 48, 156) !important;
   border-color: rgb(77, 48, 156) !important;
+  color: red !important;
 }
 
 :host ::ng-deep .p-panel .p-panel-header { 
@@ -58,3 +61,8 @@ header {
 :host ::ng-deep .p-panelmenu .p-component.p-panelmenu-header>a {
   color: white !important;
 }
+:host ::ng-deep .p-panel .p-panel-header  
+.p-panel-header-icon { 
+    color: white !important; 
+    box-shadow: 0 0 0 0.2rem white !important; 
+} 
