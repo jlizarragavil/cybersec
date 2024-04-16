@@ -53,19 +53,18 @@ span{
   color: white;
 }
 pre {
-  width: 100%; /* Ajusta el ancho del bloque de código */
-  margin: 0; /* Elimina el margen predeterminado */
-  padding: 1em; /* Agrega un espacio interno alrededor del bloque de código */
-  white-space: pre-wrap; /* Permite que los saltos de línea se muestren correctamente */
-  border-radius: 4px; /* Agrega bordes redondeados al bloque de código */
-  border: 1px solid #ddd; /* Agrega un borde al bloque de código */
-  background-color: #f4f4f4; /* Establece el color de fondo del bloque de código */
+  width: 100%;
+  margin: 0;
+  padding: 1em;
+  white-space: pre-wrap;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #f4f4f4; 
   overflow-y: auto;
 }
 pre code.language-javascript {
-  white-space: pre-wrap; /* Esto permite que los saltos de línea se muestren correctamente */
+  white-space: pre-wrap;
 }
 pre code.language-console {
-  white-space: pre-wrap; /* Esto permite que los saltos de línea se muestren correctamente */
+  white-space: pre-wrap;
 }
-
