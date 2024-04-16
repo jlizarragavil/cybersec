@@ -108,19 +108,22 @@ export class SideMenuComponent {
         label: 'Home',
         icon: 'pi pi-home',
         routerLink: '/home',
-        
+        styleClass: 'menuItemColor'
       },
       {
         label: 'Conceptos',
         icon: 'pi pi-book',
+        styleClass: 'menuItemColor',
         //routerLink: '/hackingWeb',
         items: [{
           label: 'SQL Injection',
           icon: 'pi pi-database',
+          styleClass: 'menuItemColor',
           routerLink: '/sql-injection'
         },
         {
           label: 'XSS',
+          styleClass: 'menuItemColor',
           icon: 'pi pi-code',
           routerLink: '/xss'
         }

@@ -8,12 +8,4 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'CyberSecNotes';
-  isHeaderVisible = true;
-  lastScrollTop = 0;
-  scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
 }

@@ -6,7 +6,7 @@ body, html {
 
 header {
   height: 10vh;
-  background-color: aliceblue;
+  background-color: rgb(125, 137, 148);
 }
 
 .layout-container {
@@ -27,22 +27,6 @@ header {
   height: 100%; /* Ocupa el 100% del espacio restante */
 }
 
-.scroll-top-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #2d73e2;
-  color: #ffffff;
-  border: black 1px solid !important;
-  border-radius: 25%;
-  width: 65px;
-  height: 50px;
-  font-size: 24px;
-  cursor: pointer;
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-
 /* Ajusta el tamaño de la app-side-menu para evitar desbordamiento */
 app-side-menu {
   max-height: 90%;
@@ -52,4 +36,45 @@ app-side-menu {
 .vertical-line {
   border-left: 2px solid rgb(141, 137, 137); /* Puedes ajustar el grosor y el color según tus preferencias */
   height: 100%; /* Ajusta la altura al 100% de la pantalla */
+}
+
+:host ::ng-deep .p-panelmenu .p-panelmenu-header > a,
+::ng-deep .p-panelmenu .p-panelmenu-content {
+  background: #3d434d !important;
+  border-color: #3d434d !important;
+}
+
+
+
+:host ::ng-deep .p-panel .p-panel-content { 
+  background: #3d434d !important; 
+  border-color: rgb(150, 145, 163) !important;
+} 
+
+::ng-deep .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled)>a:hover {
+  background-color: rgb(77, 48, 156) !important;
+  border-color: rgb(77, 48, 156) !important;
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight>a {
+  background-color: rgb(77, 48, 156) !important;
+}
+
+
+::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a:hover {
+  background-color: rgb(77, 48, 156) !important;
+}
+
+:host ::ng-deep .p-panel .p-panel-header{ 
+  background: #667388 !important; 
+} 
+
+:host ::ng-deep .p-menuitem-text{
+  color: white !important;
+}
+:host ::ng-deep .p-menuitem-icon{
+  color: white !important;
+}
+:host ::ng-deep .p-panelmenu .p-component.p-panelmenu-header>a {
+  color: white !important;
 }

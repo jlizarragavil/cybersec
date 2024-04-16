@@ -9,22 +9,13 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-.p-menubar {
-    border: 1px solid green !important;
-    border-radius: 20px !important;
-    background: #E1ECFF !important;
-    font-size: 19px !important;
-    
-}
 .panel-wrapper {
-  border-radius: 20px;
-  border: 1px solid green;
+
   overflow: hidden; 
   width: 100%;
 }
 .p-menuitem-link:hover {
-  background-color: #C4D9FA !important;
-  border-radius: 15px !important;
+  background: #9fb5db !important;
 }
 
 img{
@@ -49,4 +40,7 @@ img{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+h1, h2, h3, h4, p, li{
+  color: white;
 }
