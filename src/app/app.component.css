@@ -49,7 +49,8 @@ header {
 :host ::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a:hover {
   background-color: rgb(77, 48, 156) !important;
   border-color: rgb(77, 48, 156) !important;
-  color: red !important;
+  color: white !important;
+  border-radius: 20px;
 }
 
 :host ::ng-deep .p-panel .p-panel-header { 
@@ -66,3 +67,9 @@ header {
     color: white !important; 
     box-shadow: 0 0 0 0.2rem white !important; 
 } 
+
+:host ::ng-deep .p-panelmenu .p-menuitem-link[role="treeitem"] {
+  margin-left: 20% !important; /* Ajusta este valor según sea necesario */
+  border-radius: 20px;
+
+}

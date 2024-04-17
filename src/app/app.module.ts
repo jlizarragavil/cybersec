@@ -27,7 +27,7 @@ import { HomeComponent } from './home/home.component';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { MenuModule } from 'primeng/menu';
 import { PanelMenuModule } from 'primeng/panelmenu';
-
+import { ScrollTopModule } from 'primeng/scrolltop';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +58,8 @@ import { PanelMenuModule } from 'primeng/panelmenu';
     ListboxModule,
     MegaMenuModule,
     MenuModule,
-    PanelMenuModule
+    PanelMenuModule,
+    ScrollTopModule
   ],
   providers: [PrimeIcons ],
   bootstrap: [AppComponent]

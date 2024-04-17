@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { MegaMenuItem, MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
@@ -27,81 +28,6 @@ export class SideMenuComponent {
 
   plainMenuItems: MenuItem[] = [];
   ngOnInit() {
-
-    this.gfg = [
-      {
-        label: 'DSA - Self Paced',
-        items: [
-          
-            {
-              label: 'Batch 1',
-              items: [{ label: 'Batch 1.1' },
-              { label: 'Batch 1.2' }],
-            },
-            {
-              label: 'Batch 2',
-              items: [{ label: 'Batch 2.1' },
-              { label: 'Batch 2.2' }],
-            },
-          
-          
-            {
-              label: 'Batch 3',
-              items: [{ label: 'Batch 3.1' },
-              { label: 'Batch 3.2' }],
-            },
-            {
-              label: 'Batch 4',
-              items: [{ label: 'Batch 4.1' },
-              { label: 'Batch 4.2' }],
-            },
-        ]
-        
-      },
-
-      {
-        label: 'COmplete Interview Preparation',
-        items: [
-          
-            {
-              label: 'Batch 1',
-              items: [{ label: 'User 1.1' },
-              { label: 'User 1.2' }],
-            },
-            {
-              label: 'Batch 2',
-              items: [{ label: 'Batch 2.1' },
-              { label: 'Batch 2.2' }],
-            },
-          
-          
-            {
-              label: 'Batch 3',
-              items: [{ label: 'Batch 3.1' },
-              { label: 'Batch 3.2' }],
-            },
-            {
-              label: 'Batch 4',
-              items: [{ label: 'Batch 4.1' },
-              { label: 'Batch 4.2' }],
-            },
-          
-          
-            {
-              label: 'Batch 5',
-              items: [{ label: 'Batch 5.1' },
-              { label: 'Batch 5.2' }],
-            },
-            {
-              label: 'Batch 6',
-              items: [{ label: 'Batch 6.1' },
-              { label: 'Batch 6.2' }],
-            },
-          ],
-        
-      }
-      
-    ];
 
     this.tieredItems = [
       {
