@@ -8,6 +8,7 @@ import { PasswordAttackMenuComponent } from './password-attack-menu/password-att
 import { HackingWebMenuComponent } from './hacking-web-menu/hacking-web-menu.component';
 import { XssComponent } from './xss/xss.component';
 import { LfiComponent } from './lfi/lfi.component';
+import { RfiComponent } from './rfi/rfi.component';
 import { NmapComponent } from './nmap/nmap.component';
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'hackingWeb', component: HackingWebMenuComponent },
   { path: 'lfi', component: LfiComponent },
   { path: 'nmap', component: NmapComponent },
+  { path: 'rfi', component: RfiComponent },
   // Otras rutas
 ];
 

@@ -165,8 +165,12 @@ export class SideMenuComponent {
           label: 'Local File Inclusion',
           icon: 'pi pi-file',
           routerLink: '/lfi'
+        },
+        {
+          label: 'Remote File Inclusion',
+          icon: 'pi pi-file',
+          routerLink: '/rfi'
         }
-
         ]
       },
       {

