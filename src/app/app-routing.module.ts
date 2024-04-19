@@ -10,7 +10,7 @@ import { XssComponent } from './xss/xss.component';
 import { LfiComponent } from './lfi/lfi.component';
 import { RfiComponent } from './rfi/rfi.component';
 import { NmapComponent } from './nmap/nmap.component';
-
+import { ReverShellComponent } from './rever-shell/rever-shell.component'
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirección a /home
   { path: 'home', component: HomeComponent }, // Ruta para la página de inicio
@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'lfi', component: LfiComponent },
   { path: 'nmap', component: NmapComponent },
   { path: 'rfi', component: RfiComponent },
+  { path: 'revershell', component: ReverShellComponent },
   // Otras rutas
 ];
 

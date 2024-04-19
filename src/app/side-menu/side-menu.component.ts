@@ -42,6 +42,12 @@ export class SideMenuComponent {
         styleClass: 'menuItemColor',
         //routerLink: '/hackingWeb',
         items: [{
+          label: 'Shell reversa',
+          icon: 'pi pi-sync',
+          styleClass: 'menuItemColor',
+          routerLink: '/revershell'
+        },
+        {
           label: 'SQL Injection',
           icon: 'pi pi-database',
           styleClass: 'menuItemColor',

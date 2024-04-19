@@ -6,6 +6,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module'; // Importa tu AppRoutingModule u otro módulo de enrutamiento
 import { SideMenuComponent } from './side-menu/side-menu.component'
+import { ReverShellComponent } from './rever-shell/rever-shell.component'
 import { SidebarModule } from 'primeng/sidebar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { PrimeIcons } from 'primeng/api';
@@ -39,7 +40,8 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     LfiComponent,
     NmapComponent,
     HomeComponent,
-    RfiComponent
+    RfiComponent,
+    ReverShellComponent
   ],
   imports: [
     ButtonModule,
