@@ -1,51 +1,11 @@
-.copy-button {
-  margin-left: 50px; 
-}
-.code-textarea {
-  width: 100%; 
-  height: 150px;
-}
-.code-container {
-  position: relative;
-}
-
-.code-textarea {
-  padding-left: 2.5em;
-}
-
-.line-numbers span {
-  display: block;
-  line-height: 1.5em;
-}
-.code-container {
-  position: relative;
-  max-height: 400px;
-  overflow-y: auto; 
-}
-p {
-  font-size: 18px;
-}
-:host ::ng-deep .listbox1 { 
-width: 300px; 
-background-color: #3d434d;
-border: none;
-margin: 0 auto;
-}  
 
 
-
-:host ::ng-deep .listbox1 .p-listbox-item { 
-  color: red !important; 
-  font-weight: bold !important; 
+a {
+  color: white; /* Cambia el color del texto a rojo */
 }
-:host ::ng-deep .p-listbox-list { 
-  border: 5px solid green !important; 
-} 
-:host ::ng-deep .p-listbox-header { 
-  color: white !important; 
-  background-color: green !important; 
-  font-size: 20px !important; 
-} 
+a:hover {
+  color: white; /* Cambia el color del texto a rojo */
+}
 
 
 span{
@@ -68,3 +28,4 @@ pre code.language-javascript {
 pre code.language-console {
   white-space: pre-wrap;
 }
+

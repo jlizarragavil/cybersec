@@ -111,6 +111,7 @@ export class XssComponent implements AfterViewInit, OnInit  {
     this.titleService.setTitle(this.pageTitle);
   }
 
+  
   ngAfterViewInit(): void {
     Prism.highlightAll();
   }

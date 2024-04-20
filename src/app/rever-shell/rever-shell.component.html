@@ -11,12 +11,28 @@
     <h1>Shell reversa</h1>
 </p-header>
 
+<ul>
+    <li *ngFor="let section of sections">
+      <a [href]="generateURL(section.label)">{{ section.label }}</a>
+      <ul *ngIf="section.subSections">
+        <li *ngFor="let subSection of section.subSections">
+          <a [href]="generateURL(subSection.label)">{{ subSection.label }}</a>
+          <ul *ngIf="subSection.subSections">
+            <li *ngFor="let subSubSection of subSection.subSections">
+              <a [href]="generateURL(subSubSection.label)">{{ subSubSection.label }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  
 <hr>
 <br>
 <div class="panel-wrapper">
     <p-panel>
         <ng-template pTemplate="header">
-            <div class="header-container">
+            <div class="header-container" id="Que es una rever">
               <h4>Que es una shell reversa</h4>
             </div>
         </ng-template>
@@ -40,18 +56,18 @@
         </p>
         <p-panel  [toggleable]="true">
             <ng-template pTemplate="header">
-                <div class="header-container">
+                <div class="header-container" id="Como conseguir una rever">
                   <h4>Como conseguir una revershell</h4>
                 </div>
             </ng-template>
             <p>
-                Hay muchas formas de conseguir una shell reversa en la maquina objetivo. Tenemos desde <strong>remota de comandos (RCE)</strong> , 
+                Hay muchas formas de conseguir una shell reversa en la maquina objetivo. Tenemos desde <strong> ejecucion remota de comandos (RCE)</strong> , 
                 <strong>one-liners</strong> , <strong>scripts</strong> , etc.. 
             </p>  
             <p>
                Primero, para entender bien como es una rever, y lo que conseguimos con ella, vamos a lanzarnos directamente una conexión TCP desde una maquina virtual a otra
             </p>  
-            <br><h3>Rever basica</h3><br>
+            <br><h3 id="Rever basica con Netcat">Rever basica</h3><br>
             <p>
                 Tenemos nuestra maquina 1 (Kali linux) con la direccion IP <strong>192.168.1.134</strong>
             </p> 
@@ -60,7 +76,7 @@
                 Y nuestra maquina 2 (metasploitable) con la direccion IP <strong>192.168.1.130</strong>
             </p> 
             <img src="assets/conceptos/revershell/metasploitable2.PNG"><br><br>
-            <br><h4>Que necesitamos?</h4><br>
+            <br><h4 id="Preparacion para la rever">Que necesitamos?</h4><br>
             <p>
                 Para poder establecer esata conexion TCP, necesitamos que nuestro equipo atacante (Kali), esté en <strong>"escucha"</strong> sobre un puerto cualquiera que no este ocupado
             </p> 
@@ -93,7 +109,7 @@
             </p>
             <p-panel  [toggleable]="true">
                 <ng-template pTemplate="header">
-                    <div class="header-container">
+                    <div class="header-container" id="One-Liner">
                       <h4>One-Liner</h4>
                     </div>
                 </ng-template>
@@ -115,7 +131,7 @@
                 <p>
                     Ademas, necesitamos poder ejecutar comandos en la maquina victima previamente
                 </p>
-                <br><h3>Python</h3><br>
+                <br><h3 id="Python">Python</h3><br>
                 <p>
                     Vamos a ver un ejemplo de one-liner mediante python.
                 </p>

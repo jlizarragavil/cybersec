@@ -9,6 +9,11 @@ header {
   background-color: rgb(125, 137, 148);
 }
 
+.code-container {
+  position: relative;
+  max-height: 400px;
+  overflow-y: auto; 
+}
 .layout-container {
   display: flex;
   height: 90vh; /* Ajusta la altura al 90% de la pantalla */

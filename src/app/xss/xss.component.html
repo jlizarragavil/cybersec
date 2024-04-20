@@ -1,36 +1,24 @@
 <style>
 </style>
 <h1 style=" text-align: center;">Cross Site Scripting</h1>
-<p-listbox [options]="sections" [optionLabel]="'label'" styleClass="listbox1">
-  <ng-template let-section pTemplate="item">
-    <div>
-      <a (click)="scrollToSection(section.label)">
-        <span>{{section.label}}</span>
-      </a>
-      <ul *ngIf="section.subSections">
-        <li *ngFor="let subSection of section.subSections">
-          <a (click)="scrollToSection(subSection.label)">
-            <span>{{subSection.label}}</span>
-          </a>
-          <ul *ngIf="subSection.subSections">
-            <li *ngFor="let subSubSection of subSection.subSections">
-              <a (click)="scrollToSection(subSubSection.label)">
-                <span>{{subSubSection.label}}</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </ng-template>
-</p-listbox>
+
+<ul>
+  <li *ngFor="let section of sections">
+    <a [href]="generateURL(section.label)">{{ section.label }}</a>
+    <ul *ngIf="section.subSections">
+      <li *ngFor="let subSection of section.subSections">
+        <a [href]="generateURL(subSection.label)">{{ subSection.label }}</a>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <br>
 
 <div class="panel-wrapper">
   <p-panel>
     <ng-template pTemplate="header">
-      <div class="header-container">
+      <div class="header-container" id="Que es XSS">
         <h3>{{ panelXSSHeader }}</h3>
       </div>
     </ng-template>
@@ -53,7 +41,7 @@
 <div class="panel-wrapper">
   <p-panel [toggleable]="true" id="Reflected XSS">
     <ng-template pTemplate="header">
-      <div class="header-container"  >
+      <div class="header-container" id="Reflected XSS" >
         <h3>{{ panelHeaderReflected }}</h3>
         
       </div>

@@ -14,4 +14,11 @@ pre {
   pre code.language-console {
     white-space: pre-wrap;
   }
+
+  a {
+    color: white; /* Cambia el color del texto a rojo */
+  }
+  a:hover {
+    color: white; /* Cambia el color del texto a rojo */
+  }
   
