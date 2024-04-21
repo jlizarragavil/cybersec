@@ -49,9 +49,47 @@ h1, h2, h3, h4, p, li{
   color: white;
 }
 
+h1{
+  text-align: center;
+}
+
 .titleGoogle{
   font-family: "Jersey 20", sans-serif;
   font-weight: 100;
   color: black;
   font-size:8vh;
 }
+
+
+pre {
+  width: 100%;
+  margin: 0;
+  padding: 1em;
+  white-space: pre-wrap;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #f4f4f4; 
+  overflow-y: auto;
+}
+pre code.language-javascript {
+  white-space: pre-wrap;
+}
+pre code.language-console {
+  white-space: pre-wrap;
+}
+
+.container {
+  display: flex;
+  margin-left: 0%;
+  align-items: center;
+}
+
+.menu {
+  flex: 1;
+}
+
+.photo img {
+  max-width: 100%; /* Ajusta el tamaño máximo de la foto */
+  max-height: 100%; /* Ajusta la altura máxima de la foto */
+}
+

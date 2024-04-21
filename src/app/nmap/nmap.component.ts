@@ -3,6 +3,12 @@ import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import { NmapTable } from '../model/NmapTable';
 import { Table } from 'primeng/table';
+import { Location } from '@angular/common';
+interface Section {
+  label: string;
+  subSections?: Section[];
+}
+
 @Component({
   selector: 'app-nmap',
   templateUrl: './nmap.component.html',
@@ -10,7 +16,29 @@ import { Table } from 'primeng/table';
 })
 export class NmapComponent {
   pageTitle: string = '';
-
+  sections: Section[] = [
+    { label: 'Que es XSS'},
+    { label: 'Reflected XSS',
+    subSections: [
+      { label: 'Ejemplos' },
+      { label: 'Test', 
+        subSections: [
+          { label: 'Subtest' }
+        ]
+      }
+    ]
+     },
+     { label: 'Stored XSS',
+    subSections: [
+      { label: 'Ejemplo1: Alert' },
+      { label: 'Ejemplo2: Robo de cookie', 
+        //subSections: [
+          //{ label: 'Subtest' }
+        //]
+      }
+    ]
+     }
+  ];
   nmapPorts:  string = `sudo nmap -p- --open --min-rate 5000 -sS -n -Pn [IP] -vvv -oN openPorts`;
   nmapServices:  string = `nmap -p[openPorts] -sCV [IP] -vvv -oN services`;
   nmap:  string = `nmap <tipo de escaneo> <opciones> <objetivo>`;
@@ -56,7 +84,7 @@ export class NmapComponent {
     {opcion: '--packet-trace', nombre: '', descripcion:'Mostrar todos los paquetes enviados y recibidos'},
     {opcion: '--iflist', nombre: '', descripcion:'Imprimir interfaces de host y enrutador (para depuración)'}
   ];
-  constructor(private titleService: Title, private router: Router) {
+  constructor(private titleService: Title, private router: Router, private location: Location) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         window.scrollTo(0, 0); // Scrolls to the top of the page
@@ -81,5 +109,9 @@ export class NmapComponent {
   }
   clear(tabla: Table) {
     tabla.clear();
+  }
+  generateURL(label: string): string {
+    const basePath = this.location.prepareExternalUrl('');
+    return `${basePath}xss#${label}`;
   }
 }

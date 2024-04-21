@@ -1,31 +1,30 @@
-<style>
-    p {
-        font-size: 18px;
-    }
-    .container {
-        text-align: left; /* Centra el contenido horizontalmente */
-    }
-</style>
-
 <p-header>
     <h1>Shell reversa</h1>
 </p-header>
-
-<ul>
-    <li *ngFor="let section of sections">
-      <a [href]="generateURL(section.label)">{{ section.label }}</a>
-      <ul *ngIf="section.subSections">
-        <li *ngFor="let subSection of section.subSections">
-          <a [href]="generateURL(subSection.label)">{{ subSection.label }}</a>
-          <ul *ngIf="subSection.subSections">
-            <li *ngFor="let subSubSection of subSection.subSections">
-              <a [href]="generateURL(subSubSection.label)">{{ subSubSection.label }}</a>
+<div class="container">
+    <div class="menu">
+      <ul>
+        <li *ngFor="let section of sections">
+          <a [href]="generateURL(section.label)">{{ section.label }}</a>
+          <ul *ngIf="section.subSections">
+            <li *ngFor="let subSection of section.subSections">
+              <a [href]="generateURL(subSection.label)">{{ subSection.label }}</a>
+              <ul *ngIf="subSection.subSections">
+                <li *ngFor="let subSubSection of subSection.subSections">
+                  <a [href]="generateURL(subSubSection.label)">{{ subSubSection.label }}</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </li>
       </ul>
-    </li>
-  </ul>
+    </div>
+    <div class="photo">
+      <!-- Aquí coloca tu foto -->
+      <img src="assets/conceptos/revershell/titulo.PNG">
+    </div>
+</div>
+  
   
 <hr>
 <br>

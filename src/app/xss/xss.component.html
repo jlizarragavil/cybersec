@@ -1,18 +1,25 @@
 <style>
 </style>
-<h1 style=" text-align: center;">Cross Site Scripting</h1>
-
-<ul>
-  <li *ngFor="let section of sections">
-    <a [href]="generateURL(section.label)">{{ section.label }}</a>
-    <ul *ngIf="section.subSections">
-      <li *ngFor="let subSection of section.subSections">
-        <a [href]="generateURL(subSection.label)">{{ subSection.label }}</a>
+<h1>Cross Site Scripting</h1>
+<br>
+<div class="container">
+  <div class="menu">
+    <ul>
+      <li *ngFor="let section of sections">
+        <a [href]="generateURL(section.label)">{{ section.label }}</a>
+        <ul *ngIf="section.subSections">
+          <li *ngFor="let subSection of section.subSections">
+            <a [href]="generateURL(subSection.label)">{{ subSection.label }}</a>
+          </li>
+        </ul>
       </li>
     </ul>
-  </li>
-</ul>
-
+  </div>
+  <div class="photo">
+    <!-- Aquí coloca tu foto -->
+    <img src="assets/XSS/XSSalert.PNG">
+  </div>
+</div>
 <br>
 
 <div class="panel-wrapper">
@@ -23,31 +30,34 @@
       </div>
     </ng-template>
     <p>
-      Cross-Site Scripting, abreviado como XSS, es una vulnerabilidad de seguridad que afecta a las aplicaciones web. 
-    </p>  
+      Cross-Site Scripting, abreviado como XSS, es una vulnerabilidad de seguridad que afecta a las aplicaciones web.
+    </p>
     <p>
-      Permite a los atacantes inyectar scripts maliciosos, generalmente en forma de código JavaScript, en páginas web vistas por otros usuarios. 
-    </p>  
+      Permite a los atacantes inyectar scripts maliciosos, generalmente en forma de código JavaScript, en páginas web
+      vistas por otros usuarios.
+    </p>
     <p>
-      Estos scripts pueden robar información confidencial, como por ejemplo, la cookie de sesions, 
+      Estos scripts pueden robar información confidencial, como por ejemplo, la cookie de sesions,
       permitiendo al atacante hacer login a la pagina web sin necesidad de utilizar credenciales y saltandose la 2fa
-    </p>  
+    </p>
     <p>
-      Existen varios tipos de XSS, pero nosotros nos vamos a centrar en <strong>Reflected</strong> y <strong>Stored</strong>
-    </p>  
+      Existen varios tipos de XSS, pero nosotros nos vamos a centrar en <strong>Reflected</strong> y
+      <strong>Stored</strong>
+    </p>
   </p-panel>
 </div>
 <hr>
 <div class="panel-wrapper">
   <p-panel [toggleable]="true" id="Reflected XSS">
     <ng-template pTemplate="header">
-      <div class="header-container" id="Reflected XSS" >
+      <div class="header-container" id="Reflected XSS">
         <h3>{{ panelHeaderReflected }}</h3>
-        
+
       </div>
     </ng-template>
-    
-    <pre class="code-container"><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.code-container')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContent }}</code></pre>
+
+    <pre
+      class="code-container"><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.code-container')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContent }}</code></pre>
   </p-panel>
 </div>
 
@@ -60,23 +70,28 @@
     <ng-template pTemplate="header">
       <div class="header-container">
         <h3>{{ panelHeaderStored }}</h3>
-        
+
       </div>
     </ng-template>
-    
+
     <p>
-      XSS (Cross-Site Scripting) Stored es una forma de ataque de seguridad en aplicaciones web donde un atacante puede inyectar scripts maliciosos en una página web o una aplicación web que luego se almacena y se muestra a otros usuarios que visitan esa página.
+      XSS (Cross-Site Scripting) Stored es una forma de ataque de seguridad en aplicaciones web donde un atacante puede
+      inyectar scripts maliciosos en una página web o una aplicación web que luego se almacena y se muestra a otros
+      usuarios que visitan esa página.
     </p>
     <p>
-      Este ataque sirve para poder conseguir informacion del usuario que visita la pagina, como por ejemplo la cookie de sesion
+      Este ataque sirve para poder conseguir informacion del usuario que visita la pagina, como por ejemplo la cookie de
+      sesion
     </p>
     <h3>Como funciona?</h3>
     <p>
-      La idea es encontrar algun input de la pagina que alamcene la informacion en BBDD (por ejemplo un Foro) y nos permita ejecutar etiquetas HTML. En caso de que así sea,
+      La idea es encontrar algun input de la pagina que alamcene la informacion en BBDD (por ejemplo un Foro) y nos
+      permita ejecutar etiquetas HTML. En caso de que así sea,
       tendriamos que crear un registro insertando este codigo malicioso.
     </p>
     <p id="Subtest">
-      Lo que conseguimos con esto es que cada vez que alguien entre en nuestro post creado en el Foro, se ejecute el script, ya que se intepreta cada vez que alguien entre al estar en BBDD
+      Lo que conseguimos con esto es que cada vez que alguien entre en nuestro post creado en el Foro, se ejecute el
+      script, ya que se intepreta cada vez que alguien entre al estar en BBDD
     </p>
     <hr>
     <div class="panel-wrapper">
@@ -84,7 +99,7 @@
         <ng-template pTemplate="header">
           <div class="header-container">
             <h3>{{ ejemplo1 }}</h3>
-            
+
           </div>
         </ng-template>
         <div>
@@ -104,7 +119,8 @@
             Llegados a este punto, podemos probar a insterar una etqiueta script.
           </p>
           <p>
-            Al ser un registro que se esta almacenando en base de datos, cada vez que alguien entre a nuestro post, se ejecutara el script
+            Al ser un registro que se esta almacenando en base de datos, cada vez que alguien entre a nuestro post, se
+            ejecutara el script
           </p>
           <p>
             Para ello, creamos un registro con la etiqueta
@@ -115,7 +131,8 @@
           </p>
           <img src="assets/XSS/XSSpost.PNG"><br><br>
           <img src="assets/XSS/XSSalert.PNG">
-          <pre class="alertTest"><strong>{{codigoXSSalert}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertTest')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContentAlert }}</code></pre>
+          <pre
+            class="alertTest"><strong>{{codigoXSSalert}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertTest')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContentAlert }}</code></pre>
         </div>
       </p-panel>
     </div>
@@ -125,15 +142,16 @@
         <ng-template pTemplate="header">
           <div class="header-container">
             <h3>{{ ejemplo2 }}</h3>
-            
+
           </div>
         </ng-template>
-        <div >
+        <div>
           <p>
-            Para este ejemplo, vamos a crear un script que nos de la informacion de la cookie de sesion del usuario que entre a visitar nuestro post
+            Para este ejemplo, vamos a crear un script que nos de la informacion de la cookie de sesion del usuario que
+            entre a visitar nuestro post
           </p>
           <p>
-            Esta vulnerabilidad ya es muy grave 
+            Esta vulnerabilidad ya es muy grave
           </p>
           <p>
             Vamos a trabajar sobre este formulario.
@@ -150,26 +168,33 @@
           <p>
             Ahora, vamos a ver si conseguimos sacar en un alert la coockie de sesion
           </p>
-          <pre class="alertCookie"><strong>{{codigoXSSalert}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertCookie')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContentAlertCookie }}</code></pre>
+          <pre
+            class="alertCookie"><strong>{{codigoXSSalert}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertCookie')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContentAlertCookie }}</code></pre>
           <img src="assets/XSS/XSSstoredAlertCookie.PNG"><br><br>
           <p>
-            Como vemos a continuacion, en el momento en el que cualquier usuario acceda al blog, le aparecera un pop up mostrandole su cookie de sesion
+            Como vemos a continuacion, en el momento en el que cualquier usuario acceda al blog, le aparecera un pop up
+            mostrandole su cookie de sesion
           </p>
-  
+
           <img src="assets/XSS/XSSstoredCookie.PNG"><br><br>
           <p>
-            Como ataque, esto no nos sirve de mucho, porque esto es un pop up que le va a saltar al cliente. La idea ahora es que este contenido nos llegue a nosotros de alguna forma
+            Como ataque, esto no nos sirve de mucho, porque esto es un pop up que le va a saltar al cliente. La idea
+            ahora es que este contenido nos llegue a nosotros de alguna forma
           </p>
           <p>
-            Para ello, vamos a generar un payload en JavaScript que nos haga una peticion por http a un servidor que vamos a tener que estar ejecutando en nuestro equipo mediante python
+            Para ello, vamos a generar un payload en JavaScript que nos haga una peticion por http a un servidor que
+            vamos a tener que estar ejecutando en nuestro equipo mediante python
           </p>
-          <pre class="alertCookieScript"><strong>{{codigoXSScookie}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertCookieScript')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codesendCookie }}</code></pre>
+          <pre
+            class="alertCookieScript"><strong>{{codigoXSScookie}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertCookieScript')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codesendCookie }}</code></pre>
           <p>
-            Al crear un post en el blog con este contgenido, cada vez que alguien acceda a nuestro post, se va a hacer una llamada a nuestro servidor donde nos llegaran las cookies de los usuarios que estan accediendo
+            Al crear un post en el blog con este contgenido, cada vez que alguien acceda a nuestro post, se va a hacer
+            una llamada a nuestro servidor donde nos llegaran las cookies de los usuarios que estan accediendo
           </p>
           <img src="assets/XSS/XSSstoredcookieForm.PNG"><br><br>
           <p>
-            Despues de enviar el payload, vemos como se crea el post diciendo que es un blog muy bonito, pero por debajo, nos esta llegando la informacion de la cookie del usuario a nuestro servidor
+            Despues de enviar el payload, vemos como se crea el post diciendo que es un blog muy bonito, pero por
+            debajo, nos esta llegando la informacion de la cookie del usuario a nuestro servidor
           </p>
           <img src="assets/XSS/XSSstoredCookieSent.PNG"><br><br>
           <p>
@@ -177,7 +202,8 @@
           </p>
           <img src="assets/XSS/XSSstoredTest.PNG"><br><br>
           <p>
-            como vemos, nos ha llegado la cookie de sesion del usuario test, ahora podriamos hacer cookie hijacking para hacer login con ese usuario indicando solo la cookie sin necesidad de ingresar credenciales
+            como vemos, nos ha llegado la cookie de sesion del usuario test, ahora podriamos hacer cookie hijacking para
+            hacer login con ese usuario indicando solo la cookie sin necesidad de ingresar credenciales
           </p>
         </div>
       </p-panel>
@@ -185,4 +211,3 @@
 
   </p-panel>
 </div>
-
