@@ -6,65 +6,56 @@
         text-align: left; /* Centra el contenido horizontalmente */
     }
 </style>
-
-<div class="container">
-    <div class="divTitle">
-        <h3>Que es CyberSecNotes?</h3>
-    </div>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%;">
+  <p-card header="Que veremos en CyberSecNotes" [style]="{ width: '100%', 'min-height': '200px'}">
+    <ng-template pTemplate="header">
+      <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+    </ng-template>
+    <span>
+      Exploraremos técnicas de pentesting, desde la identificación de vulnerabilidades hasta la explotación y la post-explotación de sistemas informáticos
+    </span>
+  </p-card>
+  <p-card header="Qué conocimientos previos necesito" [style]="{ width: '100%', 'min-height': '200px'}">
+    <ng-template pTemplate="header">
+      <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+    </ng-template>
+    <span>
+      Se recomienda tener un conocimiento básico de redes, sistemas operativos y lenguajes de programación para comprender completamente los conceptos y técnicas de pentesting
+    </span>
+  </p-card>
+  <p-card header="Certificaciones" [style]="{ width: '100%', 'min-height': '200px'}">
+    <ng-template pTemplate="header">
+      <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+    </ng-template>
+    <span>
+      Nos prepararemos para las prestigiosas certificaciones eJPTv2 y eCPPTv2 de eLearnSecurity, que son reconocidas en la industria y demuestran habilidades en pentesting y seguridad.
+    </span>
+  </p-card>
+</div><br>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%;">
+  <p-card header="Énfasis en la práctica" [style]="{ width: '100%', 'min-height': '200px'}">
+    <ng-template pTemplate="header">
+      <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+    </ng-template>
+    <span>
+      Los apuntes están diseñados con un enfoque práctico, brindando a los estudiantes la oportunidad de aplicar directamente sus habilidades en entornos simulados y reales.
+    </span>
+  </p-card>
+  <p-card header="Recursos complementarios" [style]="{ width: '100%', 'min-height': '200px'}">
+    <ng-template pTemplate="header">
+      <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+    </ng-template>
+    <span>
+      En nuestra pagina solo veremos los apuntes, comandos, notas, etc, etc.. de cosas necesarias para el aprendizaje, pero no hay maquinas disponibles para la practica
+    </span>
+  </p-card>
+  <p-card header="Actualización continua del contenido" [style]="{ width: '100%', 'min-height': '200px'}">
+    <ng-template pTemplate="header">
+      <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+    </ng-template>
+    <span>
+      La página irá creciendo poco a poco, la idea es cubrir todos los temas que se necesitan para pasar las 2 certificaciones. En un futuro añadiremos contenido para otras certificaciones
+    </span>
+  </p-card>
 </div>
 
-<hr>
-<br>
-<div class="panel-wrapper">
-    <p-panel>
-      <p>
-        LFI (Local File Inclusion) es una vulnerabilidad de seguridad que ocurre cuando una aplicación web permite a un atacante incluir archivos locales del servidor en el contenido de una página web. 
-        Esto puede permitir al atacante leer archivos sensibles del servidor que normalmente no estarían accesibles a través de la interfaz web. 
-      </p>  
-      <p>
-        La vulnerabilidad de LFI generalmente ocurre cuando una aplicación web utiliza la entrada del usuario para incluir archivos locales sin la debida validación o filtrado. 
-        Esto puede suceder en varios contextos, como la inclusión de archivos de plantillas, la carga de archivos de configuración o la inclusión de archivos de registro.
-      </p>  
-      <p>
-        Un ataque de LFI puede ser especialmente peligroso si el servidor web ejecuta el software con privilegios elevados o si los archivos sensibles, como contraseñas o información confidencial, 
-        están accesibles a través de la inclusión local de archivos.
-      </p>  
-      <p>
-        LFI (Local File Inclusion) es una vulnerabilidad de seguridad que ocurre cuando una aplicación web permite a un atacante incluir archivos locales del servidor en el contenido de una página web. 
-        Esto puede permitir al atacante leer archivos sensibles del servidor que normalmente no estarían accesibles a través de la interfaz web. 
-      </p>  
-      <p>
-        La vulnerabilidad de LFI generalmente ocurre cuando una aplicación web utiliza la entrada del usuario para incluir archivos locales sin la debida validación o filtrado. 
-        Esto puede suceder en varios contextos, como la inclusión de archivos de plantillas, la carga de archivos de configuración o la inclusión de archivos de registro.
-      </p>  
-      <p>
-        Un ataque de LFI puede ser especialmente peligroso si el servidor web ejecuta el software con privilegios elevados o si los archivos sensibles, como contraseñas o información confidencial, 
-        están accesibles a través de la inclusión local de archivos.
-      </p>  
-      <p>
-        LFI (Local File Inclusion) es una vulnerabilidad de seguridad que ocurre cuando una aplicación web permite a un atacante incluir archivos locales del servidor en el contenido de una página web. 
-        Esto puede permitir al atacante leer archivos sensibles del servidor que normalmente no estarían accesibles a través de la interfaz web. 
-      </p>  
-      <p>
-        La vulnerabilidad de LFI generalmente ocurre cuando una aplicación web utiliza la entrada del usuario para incluir archivos locales sin la debida validación o filtrado. 
-        Esto puede suceder en varios contextos, como la inclusión de archivos de plantillas, la carga de archivos de configuración o la inclusión de archivos de registro.
-      </p>  
-      <p>
-        Un ataque de LFI puede ser especialmente peligroso si el servidor web ejecuta el software con privilegios elevados o si los archivos sensibles, como contraseñas o información confidencial, 
-        están accesibles a través de la inclusión local de archivos.
-      </p>  
-      <p>
-        LFI (Local File Inclusion) es una vulnerabilidad de seguridad que ocurre cuando una aplicación web permite a un atacante incluir archivos locales del servidor en el contenido de una página web. 
-        Esto puede permitir al atacante leer archivos sensibles del servidor que normalmente no estarían accesibles a través de la interfaz web. 
-      </p>  
-      <p>
-        La vulnerabilidad de LFI generalmente ocurre cuando una aplicación web utiliza la entrada del usuario para incluir archivos locales sin la debida validación o filtrado. 
-        Esto puede suceder en varios contextos, como la inclusión de archivos de plantillas, la carga de archivos de configuración o la inclusión de archivos de registro.
-      </p>  
-      <p>
-        Un ataque de LFI puede ser especialmente peligroso si el servidor web ejecuta el software con privilegios elevados o si los archivos sensibles, como contraseñas o información confidencial, 
-        están accesibles a través de la inclusión local de archivos.
-      </p>  
-
-    </p-panel>
-</div>

