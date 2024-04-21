@@ -9,11 +9,7 @@ header {
   background-color: rgb(125, 137, 148);
 }
 
-.code-container {
-  position: relative;
-  max-height: 400px;
-  overflow-y: auto; 
-}
+
 .layout-container {
   display: flex;
   height: 90vh; /* Ajusta la altura al 90% de la pantalla */
@@ -52,16 +48,18 @@ header {
 :host ::ng-deep .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled)>a:hover,
 :host ::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight>a,
 :host ::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a:hover {
-  background-color: rgb(77, 48, 156) !important;
-  border-color: rgb(116, 86, 199) !important;
+  background-color: rgb(91, 70, 150) !important;
+  border-color: rgb(153, 127, 224) !important;
   box-shadow: 2px 2px;
   color: rgb(30, 175, 127) !important;
   border-radius: 20px;
 }
-
+:host ::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a{
+  color: rgb(30, 175, 127) !important;
+}
 :host ::ng-deep .p-panelmenu .p-panelmenu-header>a{
-  background-color: rgb(77, 48, 156) !important;
-  border-color: rgb(116, 86, 199) !important;
+  background-color: rgb(115, 91, 180) !important;
+  border-color: rgb(153, 127, 224) !important;
   color: rgb(150, 43, 43) !important;
   border-radius: 20px;
   margin-bottom: 3%;
