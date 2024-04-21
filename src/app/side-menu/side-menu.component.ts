@@ -46,13 +46,13 @@ export class SideMenuComponent {
             label: 'Sistema operativo',
             icon: 'pi pi-sitemap',
             styleClass: 'menuItemColor',
-            routerLink: '/revershell'
+            routerLink: '/sistemaOperativo'
           },
           {
           label: 'Fases',
           icon: 'pi pi-list',
           styleClass: 'menuItemColor',
-          routerLink: '/revershell'
+          routerLink: '/Fases'
         },
         {
           label: 'Shell reversa',
@@ -73,7 +73,7 @@ export class SideMenuComponent {
         {
           label: 'Enumeracion de servicios',
           icon: 'pi pi-server',
-          routerLink: '/xss'
+          routerLink: '/enumeracionDeServicios'
         }
 
         ]
@@ -105,12 +105,12 @@ export class SideMenuComponent {
         {
           label: 'Unrestricted file upload',
           icon: ' pi pi-file-o',
-          routerLink: '/rfi'
+          routerLink: '/unrestrictedFileUpload'
         },
         {
           label: 'Reconocmiento',
           icon: 'pi pi-id-card',
-          routerLink: '/xss'
+          routerLink: '/reconocimientoWeb'
         }
         ]
       },
@@ -138,12 +138,12 @@ export class SideMenuComponent {
         items: [{
           label: 'Servicios',
           icon: 'pi pi-folder-open',
-          routerLink: '/onlinePasswordAttack'
+          routerLink: '/explotacionServicios'
         },
         {
           label: 'Metasploit',
           icon: 'pi pi-desktop',
-          routerLink: '/offlinePasswordAttack'
+          routerLink: '/metasploit'
         }
 
         ]
@@ -155,12 +155,12 @@ export class SideMenuComponent {
         items: [{
           label: 'Escalada de privilegios',
           icon: 'pi pi-arrow-up',
-          routerLink: '/onlinePasswordAttack'
+          routerLink: '/privesc'
         },
         {
           label: 'Pivoting',
           icon: 'pi pi-arrow-right-arrow-left',
-          routerLink: '/offlinePasswordAttack'
+          routerLink: '/pivoting'
         }
 
         ]
@@ -172,7 +172,7 @@ export class SideMenuComponent {
         items: [{
           label: 'Aircrack-ng',
           icon: 'pi pi-wifi',
-          routerLink: '/onlinePasswordAttack'
+          routerLink: '/aircrack'
         }
 
         ]

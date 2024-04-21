@@ -1,61 +1,83 @@
 <style>
-    p {
-        font-size: 18px;
+  p {
+    font-size: 18px;
+  }
+
+  .container {
+    text-align: left;
+    /* Centra el contenido horizontalmente */
+  }
+
+  .custom-card {
+    width: '100%' !important;
+    min-height: 200px !important;
+    background-color: rgb(115, 91, 180) !important
+  }
+
+  :host ::ng-deep {
+    .p-card.p-component {
+      width: '100%' !important;
+      min-height: 200px !important;
+      background-color: rgb(102, 114, 126) !important;
+      color: white;
     }
-    .container {
-        text-align: left; /* Centra el contenido horizontalmente */
-    }
+  }
 </style>
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%;">
-  <p-card header="Que veremos en CyberSecNotes" [style]="{ width: '100%', 'min-height': '200px'}">
+  <p-card header="Que veremos en CyberSecNotes">
     <ng-template pTemplate="header">
       <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
     </ng-template>
     <span>
-      Exploraremos técnicas de pentesting, desde la identificación de vulnerabilidades hasta la explotación y la post-explotación de sistemas informáticos
+      Exploraremos técnicas de pentesting, desde la identificación de vulnerabilidades hasta la explotación y la
+      post-explotación de sistemas informáticos
     </span>
   </p-card>
-  <p-card header="Qué conocimientos previos necesito" [style]="{ width: '100%', 'min-height': '200px'}">
+  <p-card header="Qué conocimientos previos necesito" class="custom-card">
     <ng-template pTemplate="header">
       <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
     </ng-template>
     <span>
-      Se recomienda tener un conocimiento básico de redes, sistemas operativos y lenguajes de programación para comprender completamente los conceptos y técnicas de pentesting
+      Se recomienda tener un conocimiento básico de redes, sistemas operativos y lenguajes de programación para
+      comprender completamente los conceptos y técnicas de pentesting
     </span>
   </p-card>
-  <p-card header="Certificaciones" [style]="{ width: '100%', 'min-height': '200px'}">
+  <p-card header="Certificaciones">
     <ng-template pTemplate="header">
       <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
     </ng-template>
     <span>
-      Nos prepararemos para las prestigiosas certificaciones eJPTv2 y eCPPTv2 de eLearnSecurity, que son reconocidas en la industria y demuestran habilidades en pentesting y seguridad.
+      Nos prepararemos para las prestigiosas certificaciones eJPTv2 y eCPPTv2 de eLearnSecurity, que son reconocidas en
+      la industria y demuestran habilidades en pentesting y seguridad.
     </span>
   </p-card>
 </div><br>
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%;">
-  <p-card header="Énfasis en la práctica" [style]="{ width: '100%', 'min-height': '200px'}">
+  <p-card header="Énfasis en la práctica">
     <ng-template pTemplate="header">
       <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
     </ng-template>
     <span>
-      Los apuntes están diseñados con un enfoque práctico, brindando a los estudiantes la oportunidad de aplicar directamente sus habilidades en entornos simulados y reales.
+      Los apuntes están diseñados con un enfoque práctico, brindando a los estudiantes la oportunidad de aplicar
+      directamente sus habilidades en entornos simulados y reales.
     </span>
   </p-card>
-  <p-card header="Recursos complementarios" [style]="{ width: '100%', 'min-height': '200px'}">
+  <p-card header="Recursos complementarios">
     <ng-template pTemplate="header">
       <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
     </ng-template>
     <span>
-      En nuestra pagina solo veremos los apuntes, comandos, notas, etc, etc.. de cosas necesarias para el aprendizaje, pero no hay maquinas disponibles para la practica
+      En nuestra pagina solo veremos los apuntes, comandos, notas, etc, etc.. de cosas necesarias para el aprendizaje,
+      pero no hay maquinas disponibles para la practica
     </span>
   </p-card>
-  <p-card header="Actualización continua del contenido" [style]="{ width: '100%', 'min-height': '200px'}">
+  <p-card header="Actualización continua del contenido">
     <ng-template pTemplate="header">
       <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
     </ng-template>
     <span>
-      La página irá creciendo poco a poco, la idea es cubrir todos los temas que se necesitan para pasar las 2 certificaciones. En un futuro añadiremos contenido para otras certificaciones
+      La página irá creciendo poco a poco, la idea es cubrir todos los temas que se necesitan para pasar las 2
+      certificaciones. En un futuro añadiremos contenido para otras certificaciones
     </span>
   </p-card>
 </div>
-

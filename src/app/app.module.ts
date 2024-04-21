@@ -4,9 +4,21 @@ import { RouterModule, Routes  } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module'; // Importa tu AppRoutingModule u otro módulo de enrutamiento
+import { AppRoutingModule } from './app-routing.module';
 import { SideMenuComponent } from './side-menu/side-menu.component'
 import { ReverShellComponent } from './rever-shell/rever-shell.component'
+import { UnrestrictedFileUploadComponent } from './unrestricted-file-upload/unrestricted-file-upload.component';
+import { SistemaOperativoComponent } from './sistema-operativo/sistema-operativo.component';
+import { ReconocimientoWebComponent } from './reconocimiento-web/reconocimiento-web.component';
+import { PrivescComponent } from './privesc/privesc.component';
+import { PivotingComponent } from './pivoting/pivoting.component';
+import { MetasploitComponent } from './metasploit/metasploit.component';
+import { FasesComponent } from './fases/fases.component';
+import { ExplotacionServiciosComponent } from './explotacion-servicios/explotacion-servicios.component';
+import { EnumeracionDeServiciosComponent } from './enumeracion-de-servicios/enumeracion-de-servicios.component';
+import { AircrackComponent } from './aircrack/aircrack.component';
+
+
 import { SidebarModule } from 'primeng/sidebar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { PrimeIcons } from 'primeng/api';
@@ -41,7 +53,17 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     NmapComponent,
     HomeComponent,
     RfiComponent,
-    ReverShellComponent
+    ReverShellComponent,
+    UnrestrictedFileUploadComponent,
+    SistemaOperativoComponent,
+    ReconocimientoWebComponent,
+    PrivescComponent,
+    PivotingComponent,
+    MetasploitComponent,
+    FasesComponent,
+    ExplotacionServiciosComponent,
+    EnumeracionDeServiciosComponent,
+    AircrackComponent
   ],
   imports: [
     ButtonModule,
