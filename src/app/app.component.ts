@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -6,28 +6,37 @@ import { Router, NavigationEnd } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewInit {
   currentPageTitle: string = '';
+
+  @ViewChild('mainContent') mainContent!: ElementRef;
+
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        // Aquí obtienes la URL actual
+        console.log("NavigationEnd event detected");
         const currentRoute = this.router.url;
-        // Puedes manipular la URL para mostrar solo la parte relevante que deseas en la cabecera
         const routeParts = currentRoute.split('/');
-        const pageTitle = routeParts[routeParts.length - 1]; // Toma la última parte de la URL como título de la página
-        // Asigna el título de la página a una propiedad para mostrarlo en la cabecera
+        const pageTitle = routeParts[routeParts.length - 1];
         this.currentPageTitle = pageTitle;
+
+        // Realizar el desplazamiento hacia arriba después de la navegación
+        this.scrollToTop();
       }
     });
   }
 
-  ngOnInit() { 
-    this.router.events.subscribe((event) => { 
-        if (!(event instanceof NavigationEnd)) { 
-            return; 
-        } 
-        window.scrollTo(0, 0) 
-    }); 
-} 
+  ngAfterViewInit() {
+    // Manejar cualquier otro caso de desplazamiento hacia arriba aquí si es necesario
+  }
+
+  scrollToTop() {
+    if (this.mainContent && this.mainContent.nativeElement) {
+      this.mainContent.nativeElement.scroll({ 
+        top: 0, 
+        left: 0, 
+        behavior: 'smooth' 
+      });
+    }
+  }
 }
