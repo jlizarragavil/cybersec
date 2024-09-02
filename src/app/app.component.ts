@@ -6,7 +6,7 @@ import { Router, NavigationEnd } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   currentPageTitle: string = '';
 
   @ViewChild('mainContent') mainContent!: ElementRef;
@@ -19,17 +19,10 @@ export class AppComponent implements AfterViewInit {
         const routeParts = currentRoute.split('/');
         const pageTitle = routeParts[routeParts.length - 1];
         this.currentPageTitle = pageTitle;
-
-        // Realizar el desplazamiento hacia arriba después de la navegación
         this.scrollToTop();
       }
     });
   }
-
-  ngAfterViewInit() {
-    // Manejar cualquier otro caso de desplazamiento hacia arriba aquí si es necesario
-  }
-
   scrollToTop() {
     if (this.mainContent && this.mainContent.nativeElement) {
       this.mainContent.nativeElement.scroll({ 
